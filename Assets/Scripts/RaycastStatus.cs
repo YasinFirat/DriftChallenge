@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaycastStatus : MonoBehaviour
+public class RaycastStatus : DriftGame
 {
     public Transform foward;
     public Transform right;
     public Transform left;
     public Transform top;
+    string tagOfPlayers;
     [HideInInspector]public float range;
     RaycastHit hit;
     RaycastHit leftOrRight;
     public bool can;
 
+    private void Start()
+    {
+        tagOfPlayers = gameManager.tagOfPlayers;
+    }
     /// <summary>
     /// Karakter'e yerleştirilen pointler zemini algılamadıklarında true değeri döndürür.
     /// (Arena dışına çıkmasını engellemek amaçlı oluşturuldu)
@@ -39,11 +44,15 @@ public class RaycastStatus : MonoBehaviour
 
         
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(top.position, range);
-        Gizmos.DrawWireSphere(top.position, range * 2);
-    }/// <summary>
+
+    
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireSphere(top.position, range);
+    //    Gizmos.DrawWireSphere(top.position, range * 2);
+    //}
+    
+    /// <summary>
     /// Atak için düşman menziline girdiğinde true değerini döndürür.
     /// </summary>
     /// <returns></returns>
@@ -53,7 +62,7 @@ public class RaycastStatus : MonoBehaviour
         if(Physics.SphereCast(top.position, range,top.forward,out hit))
         {
            
-            if (hit.transform.tag.Equals("Car"))
+            if (hit.transform.tag.Equals(tagOfPlayers))
             {
                 return true;
             }

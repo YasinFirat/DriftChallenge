@@ -44,21 +44,15 @@ public class PartOfArea
         members[amount].SetActive(false);
         members[amount].transform.position = firstPosition; //eski konumuna geri getirilir.
     }
-    
-
-
-
 }
 /// <summary>
 /// Area ile ilgili mekanikleri içerir. (Area'nın parent objesine yerleştirin)
 /// </summary>
-public class Area : MonoBehaviour
+public class Area : DriftGame
 {
     public List<PartOfArea> partOfAreas;
-    [Tooltip("Çemberin daralma süresi")] 
-    public float TimeOfShrinkage =5;
-    [Tooltip("Parçalanma esnasında her bir parçanın ne kadar sürede yok olacağını belirtir.")]
-   [Range(0,1)] public float destroyTimeOfPartsMember = 0.1f;
+    float timeOfShrinkage;
+    float destroyTimeOfPartsMember;
     int counterPart = 0; //partOfArea listesinin aşımını önlemek ve işlem yapmak için kullanılır
     void Awake()
     {
@@ -66,7 +60,8 @@ public class Area : MonoBehaviour
         {
             partOfAreas[i].CorrectParts();
         }
-
+        timeOfShrinkage = gameManager.timeOfShrinkage;
+        destroyTimeOfPartsMember = gameManager.destroyTimeOfPartsMember;
         StartCoroutine(TimeOfArea()); //oyun başlar başlamaz süre başlatılır.
         
     }
@@ -98,7 +93,7 @@ public class Area : MonoBehaviour
         while (true)
         {//parçalanmanın aktif olacağı zaman için işlem yapar
             
-            yield return new WaitForSeconds(TimeOfShrinkage);
+            yield return new WaitForSeconds(timeOfShrinkage);
             if (counterPart >= partOfAreas.Count)
             {
                 break;   

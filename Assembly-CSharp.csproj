@@ -58,19 +58,24 @@
   <ItemGroup>
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\Scripts\BallDamage.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Scripts\DeathControl.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Scripts\Car.cs" />
+    <Compile Include="Assets\Scripts\Parachute.cs" />
     <Compile Include="Assets\Scripts\RaycastStatus.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Scripts\AI_Move.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Area.cs" />
-    <Compile Include="Assets\Scripts\Car.cs" />
-    <Compile Include="Assets\Scripts\BallDamage.cs" />
-    <Compile Include="Assets\Scripts\DeadControl.cs" />
-    <Compile Include="Assets\Scripts\Parachute.cs" />
+    <Compile Include="Assets\Scripts\DriftGame.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\RaycastParachute.cs" />
+    <Compile Include="Assets\Scripts\ParachuteCollider.cs" />
+    <Compile Include="Assets\Scripts\BonusSkill.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

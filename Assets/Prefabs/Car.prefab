@@ -2247,7 +2247,7 @@ GameObject:
   - component: {fileID: 4997822961197392909}
   - component: {fileID: 4997822961197392908}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2322,9 +2322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56126a40d07e17a47be87d1eafb4964f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePoint: {fileID: 0}
+  Ball: {fileID: 0}
   moveSpeed: 0.5
   turnSpeed: 5
+  movePoint: {fileID: 0}
 --- !u!1 &5358954923904789097
 GameObject:
   m_ObjectHideFlags: 0
